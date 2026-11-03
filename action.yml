@@ -1,0 +1,30 @@
+name: ParityDiff public monitoring metadata
+description: Export captured public API revision metadata with dated provenance and ParityDiff links.
+branding:
+  icon: activity
+  color: gray
+inputs:
+  vendors:
+    description: Comma-separated captured public vendor slugs; empty selects all captured APIs.
+    required: false
+    default: ''
+  release-pages:
+    description: Maximum release metadata pages per API, from 1 to 4, with 50 records per page.
+    required: false
+    default: '1'
+  output:
+    description: Relative JSON output path inside the caller workspace.
+    required: false
+    default: paritydiff-monitoring.json
+outputs:
+  json-path:
+    description: Absolute path of the completed metadata snapshot.
+  api-count:
+    description: Number of captured APIs in this export.
+  recorded-release-count:
+    description: Sum of recorded release counts for the selected APIs at collection time.
+  fetched-at:
+    description: UTC timestamp when metadata collection completed.
+runs:
+  using: node24
+  main: action.mjs
