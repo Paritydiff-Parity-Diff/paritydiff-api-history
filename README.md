@@ -33,7 +33,7 @@ permissions:
 steps:
   - name: Export captured public API history
     id: monitoring
-    uses: Paritydiff-Parity-Diff/paritydiff-api-history@PIN_WITH_COMMIT_SHA
+    uses: Paritydiff-Parity-Diff/paritydiff-api-history@b620fc734741dcf39939f851e3bef8ced636443f
     with:
       vendors: openai,sentry
       release-pages: '1'
